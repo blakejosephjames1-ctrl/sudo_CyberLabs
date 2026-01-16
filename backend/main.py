@@ -2,7 +2,7 @@ from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
 
 from backend.app.core.config import settings
-from backend.app.core.database import get_db
+from backend.app.db.database import get_db
 
 app = FastAPI(title="Cybersecurity Training Platform")
 
