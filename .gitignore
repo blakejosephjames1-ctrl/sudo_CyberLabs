@@ -1,9 +1,6 @@
-# Python environment
 .venv/
 __pycache__/
 
-# Environment variables
 .env
 
-# Database files
 dev.db
