@@ -2,14 +2,14 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from backend.app.core.config import settings
-
+from backend.app.db.base import Base
 
 if not settings.DATABASE_URL:
     raise RuntimeError("DATABASE_URL is not set. Check your .env file.")
 
 engine = create_engine(
     settings.DATABASE_URL,
-    connect_args={"check_same_thread": False}  # SQLite requirement
+    connect_args={"check_same_thread": False}
 )
 
 SessionLocal = sessionmaker(
@@ -17,6 +17,8 @@ SessionLocal = sessionmaker(
     autoflush=False,
     bind=engine
 )
+
+Base.metadata.create_all(bind=engine)
 
 def get_db():
     db = SessionLocal()

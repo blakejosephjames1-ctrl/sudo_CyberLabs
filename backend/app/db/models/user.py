@@ -3,7 +3,7 @@ from backend.app.db.base import Base, TimestampMixin
 
 
 class User(Base, TimestampMixin):
-    """User model for authentication and user management."""
+    
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
