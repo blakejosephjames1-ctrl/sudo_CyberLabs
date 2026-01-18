@@ -22,6 +22,5 @@ class LabInstance(Base):
 
     created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
 
-    # Optional relationships (not required yet, but good design)
     user = relationship("User")
     room = relationship("Room")
