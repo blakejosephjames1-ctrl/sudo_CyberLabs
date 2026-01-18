@@ -7,7 +7,6 @@ Base = declarative_base()
 
 
 class TimestampMixin:
-    """Mixin for adding timestamp fields with UTC timezone."""
     created_at = Column(
         DateTime(timezone=True),
         default=lambda: datetime.now(timezone.utc),
